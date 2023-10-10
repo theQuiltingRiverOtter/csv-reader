@@ -49,7 +49,7 @@ class Animal:
         self._notes.append(note)
 
 
-def Dog(Animal):
+class Dog(Animal):
     def __init__(self, name: str, age: int, breed: str):
         super().__init__(name, age, breed)
 
@@ -57,7 +57,7 @@ def Dog(Animal):
         return f"{self.name.title()} is a {self.age} year old {self.breed} dog"
 
 
-def Cat(Animal):
+class Cat(Animal):
     def __init__(self, name: str, age: int, breed: str):
         super().__init__(name, age, breed)
 
