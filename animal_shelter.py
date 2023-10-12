@@ -12,18 +12,19 @@ class AnimalShelter:
         animals = self._file.load_file()
         for animal in animals:
             if animal_name == "cats" or animal_name == "cat":
-                self._animals.append(Cat(animal[0], int(animal[1]), animal[2]))
+                self._animals.append(Cat(animal))
             elif animal_name == "dog" or animal_name == "dogs":
-                self._animals.append(Dog(animal[0], int(animal[1]), animal[2]))
+                self._animals.append(Dog(animal))
             else:
-                self._animals.append(Animal(animal[0], int(animal[1]), animal[2]))
+                self._animals.append(Animal(animal))
 
     def print_animals(self):
         for animal in self._animals:
             print(animal)
 
 
-megans_animal_shelter = AnimalShelter()
-megans_animal_shelter.get_animals()
-megans_animal_shelter.get_animals()
-megans_animal_shelter.print_animals()
+if __name__ == "__main__":
+    megans_animal_shelter = AnimalShelter()
+    megans_animal_shelter.get_animals()
+    megans_animal_shelter.get_animals()
+    megans_animal_shelter.print_animals()

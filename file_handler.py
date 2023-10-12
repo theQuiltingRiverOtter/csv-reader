@@ -19,18 +19,21 @@ class FileHandler:
             self._animal = animal
 
     def load_file(self):
-        self._animals = []
+        animals = []
         try:
             with open(self._filepath) as file:
-                data = csv.reader(file, delimiter=",")
-                line_count = 0
+                data = csv.DictReader(file, delimiter=",", skipinitialspace=True)
                 for line in data:
-                    if line_count == 0:
-                        line_count += 1
-                        continue
-                    self._animals.append(line)
+                    animals.append(line)
         except:
             print(f"Sorry, we don't have any {self.animal} here")
             return []
 
-        return self._animals
+        return animals
+
+
+if __name__ == "__main__":
+    file_cats = FileHandler("cats")
+    file_dogs = FileHandler("dogs")
+    print(file_cats.load_file())
+    print(file_dogs.load_file())

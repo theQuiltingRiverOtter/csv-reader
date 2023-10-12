@@ -1,8 +1,8 @@
 class Animal:
-    def __init__(self, name: str, age: int, breed: str) -> None:
-        self.set_name = name
-        self.set_age = age
-        self.set_breed = breed
+    def __init__(self, animal: dict) -> None:
+        self.set_name = animal["name"]
+        self.set_age = int(animal["age"])
+        self.set_breed = animal["breed"]
         self._notes = []
 
     def __str__(self):
@@ -50,16 +50,16 @@ class Animal:
 
 
 class Dog(Animal):
-    def __init__(self, name: str, age: int, breed: str):
-        super().__init__(name, age, breed)
+    def __init__(self, animal: dict):
+        super().__init__(animal)
 
     def __str__(self):
         return f"{self.name.title()} is a {self.age} year old {self.breed} dog"
 
 
 class Cat(Animal):
-    def __init__(self, name: str, age: int, breed: str):
-        super().__init__(name, age, breed)
+    def __init__(self, animal: dict):
+        super().__init__(animal)
 
     def __str__(self):
         return f"{self.name.title()} is a {self.age} year old {self.breed} cat"
